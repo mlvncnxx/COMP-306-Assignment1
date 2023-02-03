@@ -1,0 +1,62 @@
+﻿<Window x:Class="_301167069MelAnonuevo_Lab1.ObjectLevelOperations"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_301167069MelAnonuevo_Lab1" 
+        mc:Ignorable="d"
+        Title="ObjectLevelOperations" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="87*" />
+            <ColumnDefinition Width="73*" />
+        </Grid.ColumnDefinitions>
+        <Label x:Name="bucketName" Content="Bucket" HorizontalAlignment="Left" Margin="46,24,0,0" VerticalAlignment="Top" />
+        <ComboBox
+                  x:Name="BucketListCombobox" 
+            HorizontalAlignment="Left" 
+            Margin="122,21,0,0" 
+            VerticalAlignment="Top" 
+            Width="316" Height="40" 
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding buckets}"
+            SelectionChanged="Function_SelectionChanged"
+            />
+        <Label Content="Object" HorizontalAlignment="Left" Margin="46,83,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.463,1.188"/>
+        <TextBox x:Name="objectTextBox" HorizontalAlignment="Left" Margin="122,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="316" Grid.ColumnSpan="2" Height="40"/>
+        <DataGrid Margin="10,135,0,22" Name="ObjectsGrid" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Object Name" Binding="{Binding ObjectName}" Width="1*" />
+                <DataGridTextColumn Header="Size" Binding="{Binding Size}" Width="1*" />
+                <DataGridTextColumn Width="2*" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button 
+            x:Name="browseBtn" 
+            Content="Browse" 
+            HorizontalAlignment="Right" 
+            Margin="0,93,182,0" 
+            VerticalAlignment="Top"
+            Background="#6395EE"
+            Width="128" 
+            Height="33" Foreground="#FFCCE91C" FontSize="15" Grid.Column="1" FontWeight="Bold" Click="browseBtn_Click"/>
+        <Button 
+            x:Name="uploadBtn" 
+            Content="Upload" 
+            HorizontalAlignment="Left" 
+            Margin="55,135,0,0" 
+            VerticalAlignment="Top"
+            Background="#6395EE"
+            Width="128" 
+            Height="33" Foreground="#FFCCE91C" FontSize="15" Grid.Column="1" FontWeight="Bold" Click="uploadBtn_Click"/>
+        <Button 
+            x:Name="backBtn" 
+            Content="Back to Main Window&#xD;&#xA;" 
+            HorizontalAlignment="Left" 
+            Margin="23,334,0,0" 
+            VerticalAlignment="Top"
+            Background="#6395EE"
+            Width="196" 
+            Height="33" Foreground="#FFCCE91C" FontSize="15" Grid.Column="1" FontWeight="Bold" Click="backBtn_Click"/>
+    </Grid>
+</Window>
